@@ -12,7 +12,7 @@ void main() async {
   if (!kIsWeb && Platform.isWindows) WindowsVideoPlayer.registerWith();
   await windowManager.ensureInitialized();
   WindowOptions windowOptions = const WindowOptions(
-    size: Size(1080, 620),
+    size: Size(1080, 650),
     center: true,
     backgroundColor: Colors.transparent,
     skipTaskbar: false,
@@ -111,3 +111,109 @@ class _MyAppsState extends State<MyApps> {
     );
   }
 }
+
+
+// import 'package:add_to_cart_animation/add_to_cart_animation.dart';
+// import 'package:flutter/cupertino.dart';
+// import 'package:flutter/material.dart';
+//
+// void main() {
+//   runApp(const MyApp());
+// }
+//
+// class MyApp extends StatelessWidget {
+//   const MyApp({super.key});
+//
+//   @override
+//   Widget build(BuildContext context) {
+//     return MaterialApp(
+//       title: 'Add To Cart Animation Example',
+//       theme: ThemeData(
+//         primarySwatch: Colors.blue,
+//       ),
+//       home: const MyHomePage(title: 'Add To Cart Animation Example'),
+//       debugShowCheckedModeBanner: false,
+//     );
+//   }
+// }
+//
+// class MyHomePage extends StatefulWidget {
+//   const MyHomePage({Key? key, required this.title}) : super(key: key);
+//   final String title;
+//
+//   @override
+//   MyHomePageState createState() => MyHomePageState();
+// }
+//
+// class MyHomePageState extends State<MyHomePage> {
+//   // Мы можем определить местоположение корзины с помощью этого глобального ключа<CartIconKey>
+//   GlobalKey<CartIconKey> cartKey = GlobalKey<CartIconKey>();
+//   late Function(GlobalKey) runAddToCartAnimation;
+//   var _cartQuantityItems = 0;
+//
+//   @override
+//   Widget build(BuildContext context) {
+//     return AddToCartAnimation(
+//       // Чтобы отправить в библиотеку местоположение значка корзины
+//       cartKey: cartKey,
+//       height: 30,
+//       width: 30,
+//       opacity: 0.85,
+//       dragAnimation: const DragToCartAnimationOptions(
+//         rotation: true,
+//       ),
+//       jumpAnimation: const JumpAnimationOptions(),
+//       createAddToCartAnimation: (runAddToCartAnimation) {
+//         // Вы можете запустить анимацию с помощью метода анимации "добавить в корзину", просто передав глобальный ключ изображения в качестве параметра
+//         this.runAddToCartAnimation = runAddToCartAnimation;
+//       },
+//       child: Scaffold(
+//         body: Column(
+//           children: [
+//             Expanded(
+//               child: ListView(
+//                 children: List.generate(15, (index) {
+//                   GlobalKey widgetKey = GlobalKey();
+//                   return ListTile(
+//                     onTap: () async {
+//                       await runAddToCartAnimation(widgetKey);
+//                       await cartKey.currentState!
+//                           .runCartAnimation((++_cartQuantityItems).toString());
+//                     },
+//                     leading: Container(
+//                       key: widgetKey,
+//                       width: 60,
+//                       height: 60,
+//                       color: Colors.transparent,
+//                       child: Image.asset(
+//                         'assets/images/burger.jpeg',
+//                         width: 60,
+//                         height: 60,
+//                       ),
+//                     ),
+//                     title: Text(
+//                       "Animated Apple Product Image $index",
+//                     ),
+//                   );
+//                 }),
+//               ),
+//             ),
+//             Container(
+//               width: double.infinity,
+//               height: 70,
+//               color: Colors.blue,
+//               child: AddToCartIcon(
+//                 key: cartKey,
+//                 icon: const Icon(Icons.shopping_cart),
+//                 badgeOptions: const BadgeOptions(
+//                   active: true,
+//                   backgroundColor: Colors.red,
+//                 ),
+//               ),
+//             ),
+//           ],
+//         ),
+//       ),
+//     );
+//   }
+// }

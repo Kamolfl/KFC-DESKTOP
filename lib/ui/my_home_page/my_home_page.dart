@@ -58,7 +58,7 @@ class _MyHomePageState extends State<MyHomePage> {
     return Scaffold(
       body: InkWell(
         onTap: () {
-          Navigator.of(context).push(MaterialPageRoute(builder: (context) => CategoriesScreen()));
+          Navigator.of(context).pushReplacement(MaterialPageRoute(builder: (context) => CategoriesScreen()));
         },
         child: Stack(
           children: [

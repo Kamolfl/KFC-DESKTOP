@@ -12,6 +12,13 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
+        floatingActionButtonTheme: FloatingActionButtonThemeData(
+          backgroundColor: Colors.grey[100],
+          foregroundColor: Colors.orange,
+        ),
+        appBarTheme: const AppBarTheme(
+          scrolledUnderElevation: 0,
+        ),
         scrollbarTheme: ScrollbarThemeData(
           interactive: true,
           thumbVisibility: MaterialStateProperty.all(true),
@@ -19,7 +26,7 @@ class MyApp extends StatelessWidget {
           thumbColor: MaterialStateProperty.all(Colors.red),
         ),
         splashColor: Colors.transparent,
-        scaffoldBackgroundColor: Colors.grey[200],
+        scaffoldBackgroundColor: Colors.grey[100],
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
       ),
       home: const MyHomePage(),

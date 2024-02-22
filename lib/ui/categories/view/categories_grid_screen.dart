@@ -23,7 +23,7 @@ class CategoriesGridScreen extends StatelessWidget {
         itemBuilder: (BuildContext context, int index) {
           return InkWell(
             onTap: () {
-              Navigator.of(context).push(MaterialPageRoute(builder: (context) => SecondCategories()));
+              Navigator.of(context).pushReplacement(MaterialPageRoute(builder: (context) => SecondCategories()));
             },
             child: Stack(
               children: [

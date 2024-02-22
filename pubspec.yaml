@@ -52,6 +52,8 @@ dev_dependencies:
 #  desktop_window: ^0.4.0
   window_manager: ^0.3.8
   video_player_win: ^2.3.4
+  add_to_cart_animation: ^2.0.3
+  flutter_bloc: ^8.1.4
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec
