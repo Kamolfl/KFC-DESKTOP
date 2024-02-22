@@ -39,11 +39,66 @@ class _SecondCategoriesState extends State<SecondCategories> {
             Expanded(
               child: Row(
                 children: [
-                  SecondCategoriesListView(scrollController: scrollController, secondCategoriesModel: model, selectedIndex: selectedIndex, onItemSelected: (index) {
-                    setState(() {
-                      selectedIndex = index;
-                    });
-                  }),
+                  Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: SizedBox(
+                      width: 220,
+                      child: Scrollbar(
+                        controller: scrollController,
+                        child: ListView.builder(
+                          controller: scrollController,
+                          itemCount: model.length,
+                          itemBuilder: (BuildContext context, int index) {
+                            return InkWell(
+                              onTap: () {
+                                selectedIndex = index;
+                              },
+                              child: Padding(
+                                padding: const EdgeInsets.all(5),
+                                child: UnconstrainedBox(
+                                  child: Container(
+                                    width: 170,
+                                    height: 170,
+                                    decoration: BoxDecoration(
+                                      borderRadius: BorderRadius.circular(5),
+                                      color: selectedIndex == index
+                                          ? Colors.black
+                                          : Colors.deepOrange[700],
+                                    ),
+                                    child: Column(
+                                      children: [
+                                        Padding(
+                                          padding: const EdgeInsets.all(8.0),
+                                          child: FittedBox(
+                                            child: Text(
+                                              model[index].text,
+                                              style: const TextStyle(
+                                                  fontSize: 30,
+                                                  color: Colors.white,
+                                                  fontWeight: FontWeight.bold),
+                                            ),
+                                          ),
+                                        ),
+                                        const Spacer(),
+                                        SizedBox(
+                                          width: 150,
+                                          height: 90,
+                                          child: Image.asset(
+                                            model[index].image,
+                                            fit: BoxFit.fill,
+                                          ),
+                                        ),
+                                      ],
+                                    ),
+                                  ),
+                                ),
+                              ),
+                            );
+                          },
+                        ),
+                      ),
+                    ),
+                  ),
                   Expanded(
                     child: Container(
                       width: double.infinity,
