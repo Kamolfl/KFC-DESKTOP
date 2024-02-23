@@ -16,7 +16,7 @@ class CategoriesGridScreen extends StatelessWidget {
           crossAxisCount: 2,
           crossAxisSpacing: 10,
           mainAxisSpacing: 10,
-          mainAxisExtent: MediaQuery.of(context).size.height * 0.08,
+          mainAxisExtent: MediaQuery.of(context).size.height * 0.1,
         ),
         itemBuilder: (BuildContext context, int index) {
           return InkWell(

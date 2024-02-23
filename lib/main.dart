@@ -12,16 +12,16 @@ void main() async {
   if (!kIsWeb && Platform.isWindows) WindowsVideoPlayer.registerWith();
   await windowManager.ensureInitialized();
   WindowOptions windowOptions = const WindowOptions(
-    size: Size(1080, 660),
+    // size: Size(1080, 660),
     // center: true,
     // backgroundColor: Colors.transparent,
     // skipTaskbar: true,
     // titleBarStyle: TitleBarStyle.hidden,
   );
-  windowManager.waitUntilReadyToShow(windowOptions, () async {
-    await windowManager.show();
-    await windowManager.focus();
-  });
+  // windowManager.waitUntilReadyToShow(windowOptions, () async {
+  //   await windowManager.show();
+  //   await windowManager.focus();
+  // });
   runApp(const MyApp());
 }
 
