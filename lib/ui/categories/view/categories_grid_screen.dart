@@ -11,19 +11,17 @@ class CategoriesGridScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Expanded(
       child: GridView.builder(
-        shrinkWrap: true,
-        physics: const ScrollPhysics(),
         itemCount: categories.length,
         gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
           crossAxisCount: 2,
           crossAxisSpacing: 10,
           mainAxisSpacing: 10,
-          mainAxisExtent: MediaQuery.of(context).size.height * 0.3,
+          mainAxisExtent: MediaQuery.of(context).size.height * 0.08,
         ),
         itemBuilder: (BuildContext context, int index) {
           return InkWell(
             onTap: () {
-              // Navigator.of(context).pushReplacement(MaterialPageRoute(builder: (context) => SecondCategories()));
+              Navigator.of(context).pushReplacement(MaterialPageRoute(builder: (context) => SecondCategories()));
             },
             child: Stack(
               children: [

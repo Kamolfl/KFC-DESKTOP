@@ -9,7 +9,7 @@ class ComboScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return InkWell(
       onTap: () {
-        // Navigator.of(context).pushReplacement(MaterialPageRoute(builder: (context) => const SecondCategories()));
+        Navigator.of(context).pushReplacement(MaterialPageRoute(builder: (context) => const SecondCategories()));
       },
       child: Stack(
         children: [
