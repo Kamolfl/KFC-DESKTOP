@@ -15,7 +15,7 @@ class ComboScreen extends StatelessWidget {
         children: [
           Container(
             width: double.infinity,
-            height: MediaQuery.of(context).size.height * 0.15,
+            height: MediaQuery.of(context).size.height * 0.10,
             decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(5),
                 color: Colors.deepOrange[700]),
