@@ -9,19 +9,19 @@ import 'package:video_player_win/video_player_win.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  // if (!kIsWeb && Platform.isWindows) WindowsVideoPlayer.registerWith();
-  // await windowManager.ensureInitialized();
-  // WindowOptions windowOptions = const WindowOptions(
-  //   size: Size(1080, 650),
-  //   center: true,
-  //   backgroundColor: Colors.transparent,
-  //   skipTaskbar: false,
-  //   titleBarStyle: TitleBarStyle.hidden,
-  // );
-  // windowManager.waitUntilReadyToShow(windowOptions, () async {
-  //   await windowManager.show();
-  //   await windowManager.focus();
-  // });
+  if (!kIsWeb && Platform.isWindows) WindowsVideoPlayer.registerWith();
+  await windowManager.ensureInitialized();
+  WindowOptions windowOptions = const WindowOptions(
+    size: Size(1080, 660),
+    // center: true,
+    // backgroundColor: Colors.transparent,
+    // skipTaskbar: true,
+    // titleBarStyle: TitleBarStyle.hidden,
+  );
+  windowManager.waitUntilReadyToShow(windowOptions, () async {
+    await windowManager.show();
+    await windowManager.focus();
+  });
   runApp(const MyApp());
 }
 

@@ -9,13 +9,13 @@ class ComboScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return InkWell(
       onTap: () {
-        Navigator.of(context).pushReplacement(MaterialPageRoute(builder: (context) => const SecondCategories()));
+        // Navigator.of(context).pushReplacement(MaterialPageRoute(builder: (context) => const SecondCategories()));
       },
       child: Stack(
         children: [
           Container(
             width: double.infinity,
-            height: MediaQuery.of(context).size.height * 0.3,
+            height: MediaQuery.of(context).size.height * 0.15,
             decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(5),
                 color: Colors.deepOrange[700]),

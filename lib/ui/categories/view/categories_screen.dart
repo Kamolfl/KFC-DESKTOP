@@ -12,17 +12,14 @@ class CategoriesScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          const Padding(
-            padding: EdgeInsets.only(left: 20),
-            child: Text('КАТЕГОРИИ',
+      body: Padding(
+        padding: const EdgeInsets.all(20),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            const Text('КАТЕГОРИИ',
                 style: TextStyle(fontSize: 50, fontWeight: FontWeight.w700)),
-          ),
-          Expanded(
-            child: Padding(
-              padding: const EdgeInsets.all(20),
+            Expanded(
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
@@ -32,41 +29,41 @@ class CategoriesScreen extends StatelessWidget {
                 ],
               ),
             ),
-          ),
-          Container(
-            width: double.infinity,
-            height: MediaQuery.of(context).size.height * 0.15,
-            color: Colors.black,
-            child: Padding(
-              padding: const EdgeInsets.all(20),
-              child: Container(
-                decoration: BoxDecoration(
-                  color: Colors.black,
-                  border: Border.all(
-                    color: Colors.white.withOpacity(0.3),
-                    width: 0.5,
-                  ),
-                ),
-                child: const Row(
-                  children: [
-                    Padding(
-                      padding: EdgeInsets.only(left: 10),
-                      child: Icon(Icons.shopping_cart_outlined, color: Colors.white, size: 30,),
+            Container(
+              width: double.infinity,
+              height: MediaQuery.of(context).size.height * 0.1,
+              color: Colors.black,
+              child: Padding(
+                padding: const EdgeInsets.all(20),
+                child: Container(
+                  decoration: BoxDecoration(
+                    color: Colors.black,
+                    border: Border.all(
+                      color: Colors.white.withOpacity(0.3),
+                      width: 0.5,
                     ),
-                    Expanded(
-                      child: Center(
-                        child: Text(
-                          'ВАША КОРЗИНА ПУСТА',
-                          style: TextStyle(color: Colors.white, fontSize: 30),
+                  ),
+                  child: const Row(
+                    children: [
+                      Padding(
+                        padding: EdgeInsets.only(left: 10),
+                        child: Icon(Icons.shopping_cart_outlined, color: Colors.white, size: 30,),
+                      ),
+                      Expanded(
+                        child: Center(
+                          child: Text(
+                            'ВАША КОРЗИНА ПУСТА',
+                            style: TextStyle(color: Colors.white, fontSize: 30),
+                          ),
                         ),
                       ),
-                    ),
-                  ],
+                    ],
+                  ),
                 ),
               ),
             ),
-          ),
-        ],
+          ],
+        ),
       ),
     );
   }

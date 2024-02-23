@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:kfc_desktop/ui/categories/view/categories_screen.dart';
 import 'package:kfc_desktop/ui/my_home_page/my_home_page.dart';
 import 'package:kfc_desktop/ui/second_categories/second_categories.dart';
 
@@ -29,7 +30,7 @@ class MyApp extends StatelessWidget {
         scaffoldBackgroundColor: Colors.grey[100],
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
       ),
-      home: const MyHomePage(),
+      home: CategoriesScreen(),
     );
   }
 }

@@ -52,6 +52,7 @@ class _SecondCategoriesState extends State<SecondCategories> {
                             return InkWell(
                               onTap: () {
                                 selectedIndex = index;
+                                setState(() {});
                               },
                               child: Padding(
                                 padding: const EdgeInsets.all(5),
@@ -100,120 +101,116 @@ class _SecondCategoriesState extends State<SecondCategories> {
                     ),
                   ),
                   Expanded(
-                    child: Container(
-                      width: double.infinity,
-                      height: double.infinity,
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Padding(
-                            padding: const EdgeInsets.only(left: 20),
-                            child: Text(model[selectedIndex].text,
-                                style: const TextStyle(
-                                    fontSize: 30, fontWeight: FontWeight.bold)),
-                          ),
-                          Expanded(
-                            child: GridView.builder(
-                              padding: const EdgeInsets.all(20),
-                              itemCount: model[selectedIndex].foodVariants.length,
-                              gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                                crossAxisCount: 3,
-                                crossAxisSpacing: 10,
-                                mainAxisSpacing: 10,
-                                mainAxisExtent: MediaQuery.of(context).size.height * 0.6,
-                              ),
-                              itemBuilder: (BuildContext context, int index) {
-                                GlobalKey widgetKey = GlobalKey();
-                                return Container(
-                                  color: Colors.grey[100],
-                                  // color: Colors.white,
-                                  child: InkWell(
-                                    onTap: () async {
-                                      showDialogWidget(context, model[selectedIndex], index);
-                                      await runAddToCartAnimation(widgetKey);
-                                      await cartKey.currentState!.runCartAnimation((++_cartQuantityItems).toString());
-                                    },
-                                    child: Stack(
-                                      children: [
-                                        Center(
-                                          child: UnconstrainedBox(
-                                            child: Container(
-                                              width: 250,
-                                              height: 310,
-                                              decoration: BoxDecoration(
-                                                borderRadius: BorderRadius.circular(10),
-                                                color: Colors.white,
-                                              ),
-                                              child: Padding(
-                                                padding: const EdgeInsets.all(20),
-                                                child: Column(
-                                                  mainAxisAlignment:
-                                                  MainAxisAlignment.spaceBetween,
-                                                  crossAxisAlignment:
-                                                  CrossAxisAlignment.start,
-                                                  children: [
-                                                    const SizedBox(height: 120),
-                                                    FittedBox(
-                                                        child: Text(
-                                                          model[selectedIndex].foodVariants[index].name,
-                                                          style: const TextStyle(
-                                                              fontSize: 30,
-                                                              fontWeight: FontWeight.w900),
-                                                        )),
-                                                    Row(
-                                                      mainAxisAlignment:
-                                                      MainAxisAlignment.spaceBetween,
-                                                      children: [
-                                                        Text(
-                                                          '${model[selectedIndex].foodVariants[index].gram} гр',
-                                                          style: TextStyle(
-                                                            color:
-                                                            Colors.grey.withOpacity(0.6),
-                                                            fontSize: 15,
-                                                            fontWeight: FontWeight.bold,
-                                                          ),
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Padding(
+                          padding: const EdgeInsets.only(left: 20),
+                          child: Text(model[selectedIndex].text,
+                              style: const TextStyle(
+                                  fontSize: 30, fontWeight: FontWeight.bold)),
+                        ),
+                        Expanded(
+                          child: GridView.builder(
+                            padding: const EdgeInsets.all(20),
+                            itemCount: model[selectedIndex].foodVariants.length,
+                            gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                              crossAxisCount: 3,
+                              crossAxisSpacing: 10,
+                              mainAxisSpacing: 10,
+                              mainAxisExtent: MediaQuery.of(context).size.height * 0.6,
+                            ),
+                            itemBuilder: (BuildContext context, int index) {
+                              GlobalKey widgetKey = GlobalKey();
+                              return Container(
+                                color: Colors.grey[100],
+                                // color: Colors.white,
+                                child: InkWell(
+                                  onTap: () async {
+                                    showDialogWidget(context, model[selectedIndex], index);
+                                    await runAddToCartAnimation(widgetKey);
+                                    await cartKey.currentState!.runCartAnimation((++_cartQuantityItems).toString());
+                                  },
+                                  child: Stack(
+                                    children: [
+                                      Center(
+                                        child: UnconstrainedBox(
+                                          child: Container(
+                                            width: 250,
+                                            height: 310,
+                                            decoration: BoxDecoration(
+                                              borderRadius: BorderRadius.circular(10),
+                                              color: Colors.white,
+                                            ),
+                                            child: Padding(
+                                              padding: const EdgeInsets.all(20),
+                                              child: Column(
+                                                mainAxisAlignment:
+                                                MainAxisAlignment.spaceBetween,
+                                                crossAxisAlignment:
+                                                CrossAxisAlignment.start,
+                                                children: [
+                                                  const SizedBox(height: 120),
+                                                  FittedBox(
+                                                      child: Text(
+                                                        model[selectedIndex].foodVariants[index].name,
+                                                        style: const TextStyle(
+                                                            fontSize: 30,
+                                                            fontWeight: FontWeight.w900),
+                                                      )),
+                                                  Row(
+                                                    mainAxisAlignment:
+                                                    MainAxisAlignment.spaceBetween,
+                                                    children: [
+                                                      Text(
+                                                        '${model[selectedIndex].foodVariants[index].gram} гр',
+                                                        style: TextStyle(
+                                                          color:
+                                                          Colors.grey.withOpacity(0.6),
+                                                          fontSize: 15,
+                                                          fontWeight: FontWeight.bold,
                                                         ),
-                                                        Text(
-                                                          '${model[selectedIndex].foodVariants[index].calorie} ККал',
-                                                          style: TextStyle(
-                                                            color:
-                                                            Colors.grey.withOpacity(0.6),
-                                                            fontSize: 15,
-                                                            fontWeight: FontWeight.bold,
-                                                          ),
+                                                      ),
+                                                      Text(
+                                                        '${model[selectedIndex].foodVariants[index].calorie} ККал',
+                                                        style: TextStyle(
+                                                          color:
+                                                          Colors.grey.withOpacity(0.6),
+                                                          fontSize: 15,
+                                                          fontWeight: FontWeight.bold,
                                                         ),
-                                                      ],
-                                                    ),
-                                                    FittedBox(
-                                                        child: Text(
-                                                          '${model[selectedIndex].foodVariants[index].price} ₽',
-                                                          style: const TextStyle(
-                                                              fontSize: 30,
-                                                              fontWeight: FontWeight.w900),
-                                                        )),
-                                                  ],
-                                                ),
+                                                      ),
+                                                    ],
+                                                  ),
+                                                  FittedBox(
+                                                      child: Text(
+                                                        '${model[selectedIndex].foodVariants[index].price} ₽',
+                                                        style: const TextStyle(
+                                                            fontSize: 30,
+                                                            fontWeight: FontWeight.w900),
+                                                      )),
+                                                ],
                                               ),
                                             ),
                                           ),
                                         ),
-                                        Align(
-                                          alignment: Alignment.topCenter,
-                                          child: Container(
-                                              key: widgetKey,
-                                              width: 200,
-                                              height: 150,
-                                              child: Image.asset(model[selectedIndex].foodVariants[index].image)),
-                                        ),
-                                      ],
-                                    ),
+                                      ),
+                                      Align(
+                                        alignment: Alignment.topCenter,
+                                        child: Container(
+                                            key: widgetKey,
+                                            width: 200,
+                                            height: 150,
+                                            child: Image.asset(model[selectedIndex].foodVariants[index].image)),
+                                      ),
+                                    ],
                                   ),
-                                );
-                              },
-                            ),
-                          )
-                        ],
-                      ),
+                                ),
+                              );
+                            },
+                          ),
+                        )
+                      ],
                     ),
                   ),
                 ],
