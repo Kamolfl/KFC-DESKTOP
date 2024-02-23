@@ -11,10 +11,11 @@ class SecondCategoriesListviewBloc extends Bloc<SecondCategoriesListviewEvent, S
   SecondCategoriesListviewBloc() : super(SecondCategoriesListviewInitial()) {
     on<SecondCategoriesListviewSelectCategoryEvent>((event, emit) {
       try{
-        emit(SecondCategoriesListviewLoadingState());
         Future.delayed(const Duration(milliseconds: 300), () {
+          emit(SecondCategoriesListviewLoadingState());
+        });
           emit(SecondCategoriesListviewSelectedIndexState(selectedIndex: event.selectedIndex, secondCategoriesModel: model));
-        });      } catch(e) {
+        } catch(e) {
         emit(SecondCategoriesListviewError(error: e.toString()));
       }
     });

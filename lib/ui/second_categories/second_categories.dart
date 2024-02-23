@@ -14,7 +14,7 @@ class _SecondCategoriesState extends State<SecondCategories> {
   late Function(GlobalKey) runAddToCartAnimation;
   int _cartQuantityItems = 0;
   int selectedIndex = 0;
-  bool isChecked = false;
+  bool isChecked = true;
   ScrollController scrollController = ScrollController();
 
 
@@ -60,7 +60,8 @@ class _SecondCategoriesState extends State<SecondCategories> {
                                     width: 170,
                                     height: 170,
                                     decoration: BoxDecoration(
-                                      borderRadius: BorderRadius.circular(5),
+                                      borderRadius:
+                                      BorderRadius.circular(5),
                                       color: selectedIndex == index
                                           ? Colors.black
                                           : Colors.deepOrange[700],
@@ -68,14 +69,12 @@ class _SecondCategoriesState extends State<SecondCategories> {
                                     child: Column(
                                       children: [
                                         Padding(
-                                          padding: const EdgeInsets.all(8.0),
+                                          padding:
+                                          const EdgeInsets.all(8.0),
                                           child: FittedBox(
                                             child: Text(
                                               model[index].text,
-                                              style: const TextStyle(
-                                                  fontSize: 30,
-                                                  color: Colors.white,
-                                                  fontWeight: FontWeight.bold),
+                                              style: const TextStyle(fontSize: 30, color: Colors.white, fontWeight: FontWeight.bold),
                                             ),
                                           ),
                                         ),
@@ -106,8 +105,7 @@ class _SecondCategoriesState extends State<SecondCategories> {
                         Padding(
                           padding: const EdgeInsets.only(left: 20),
                           child: Text(model[selectedIndex].text,
-                              style: const TextStyle(
-                                  fontSize: 30, fontWeight: FontWeight.bold)),
+                              style: const TextStyle(fontSize: 30, fontWeight: FontWeight.bold)),
                         ),
                         Expanded(
                           child: GridView.builder(
@@ -117,7 +115,7 @@ class _SecondCategoriesState extends State<SecondCategories> {
                               crossAxisCount: 3,
                               crossAxisSpacing: 10,
                               mainAxisSpacing: 10,
-                              mainAxisExtent: MediaQuery.of(context).size.height * 0.2,
+                              mainAxisExtent: MediaQuery.of(context).size.height * 0.55,
                             ),
                             itemBuilder: (BuildContext context, int index) {
                               GlobalKey widgetKey = GlobalKey();
@@ -138,34 +136,31 @@ class _SecondCategoriesState extends State<SecondCategories> {
                                             width: 250,
                                             height: 310,
                                             decoration: BoxDecoration(
-                                              borderRadius: BorderRadius.circular(10),
+                                              borderRadius:
+                                                  BorderRadius.circular(10),
                                               color: Colors.white,
                                             ),
                                             child: Padding(
                                               padding: const EdgeInsets.all(20),
                                               child: Column(
-                                                mainAxisAlignment:
-                                                MainAxisAlignment.spaceBetween,
-                                                crossAxisAlignment:
-                                                CrossAxisAlignment.start,
+                                                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                                crossAxisAlignment: CrossAxisAlignment.start,
                                                 children: [
                                                   const SizedBox(height: 120),
                                                   FittedBox(
                                                       child: Text(
-                                                        model[selectedIndex].foodVariants[index].name,
-                                                        style: const TextStyle(
-                                                            fontSize: 30,
-                                                            fontWeight: FontWeight.w900),
-                                                      )),
+                                                    model[selectedIndex].foodVariants[index].name,
+                                                    style: const TextStyle(
+                                                        fontSize: 30,
+                                                        fontWeight: FontWeight.w900),
+                                                  )),
                                                   Row(
-                                                    mainAxisAlignment:
-                                                    MainAxisAlignment.spaceBetween,
+                                                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
                                                     children: [
                                                       Text(
                                                         '${model[selectedIndex].foodVariants[index].gram} гр',
                                                         style: TextStyle(
-                                                          color:
-                                                          Colors.grey.withOpacity(0.6),
+                                                          color: Colors.grey.withOpacity(0.6),
                                                           fontSize: 15,
                                                           fontWeight: FontWeight.bold,
                                                         ),
@@ -173,8 +168,7 @@ class _SecondCategoriesState extends State<SecondCategories> {
                                                       Text(
                                                         '${model[selectedIndex].foodVariants[index].calorie} ККал',
                                                         style: TextStyle(
-                                                          color:
-                                                          Colors.grey.withOpacity(0.6),
+                                                          color: Colors.grey.withOpacity(0.6),
                                                           fontSize: 15,
                                                           fontWeight: FontWeight.bold,
                                                         ),
@@ -182,12 +176,12 @@ class _SecondCategoriesState extends State<SecondCategories> {
                                                     ],
                                                   ),
                                                   FittedBox(
-                                                      child: Text(
-                                                        '${model[selectedIndex].foodVariants[index].price} ₽',
-                                                        style: const TextStyle(
-                                                            fontSize: 30,
-                                                            fontWeight: FontWeight.w900),
-                                                      ),
+                                                    child: Text(
+                                                      '${model[selectedIndex].foodVariants[index].price} ₽',
+                                                      style: const TextStyle(
+                                                          fontSize: 30,
+                                                          fontWeight: FontWeight.w900),
+                                                    ),
                                                   ),
                                                 ],
                                               ),
@@ -240,7 +234,8 @@ class _SecondCategoriesState extends State<SecondCategories> {
                               active: false,
                               backgroundColor: Colors.red,
                             ),
-                            icon: const Icon(Icons.shopping_cart_outlined, color: Colors.white, size: 30)),
+                            icon: const Icon(Icons.shopping_cart_outlined,
+                                color: Colors.white, size: 30)),
                       ),
                       const Expanded(
                         child: Center(
@@ -261,9 +256,11 @@ class _SecondCategoriesState extends State<SecondCategories> {
     );
   }
 
-  void showDialogWidget(BuildContext context, SecondCategoriesModel model, int index) {
+  void showDialogWidget(
+      BuildContext context, SecondCategoriesModel model, int index) {
     final modelFavorite = model.foodVariants[index];
-    showDialog(context: context,
+    showDialog(
+      context: context,
       barrierDismissible: false,
       builder: (BuildContext context) {
         return Center(
@@ -281,10 +278,7 @@ class _SecondCategoriesState extends State<SecondCategories> {
                           Navigator.pop(context);
                         },
                         icon: const Icon(
-                          Icons.close,
-                          size: 30,
-                          color: Colors.white,
-                        ))),
+                          Icons.close, size: 30, color: Colors.white))),
                 Align(
                   alignment: Alignment.bottomCenter,
                   child: Container(
@@ -302,19 +296,14 @@ class _SecondCategoriesState extends State<SecondCategories> {
                           decoration: BoxDecoration(
                             borderRadius: const BorderRadius.only(
                                 topLeft: Radius.circular(10),
-                                topRight: Radius.circular(
-                                  10,
-                                )),
+                                topRight: Radius.circular(10)),
                             color: Colors.grey[100],
                           ),
                           child: Column(
                             children: [
-                              const SizedBox(
-                                height: 50,
-                              ),
+                              const SizedBox(height: 50),
                               Text(
-                                modelFavorite.name,
-                                style: const TextStyle(
+                                modelFavorite.name, style: const TextStyle(
                                     fontSize: 25, fontWeight: FontWeight.w900),
                               ),
                               Padding(
@@ -323,11 +312,9 @@ class _SecondCategoriesState extends State<SecondCategories> {
                                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                                   children: [
                                     Text('${modelFavorite.gram} гр',
-                                        style: const TextStyle(
-                                            fontSize: 17, color: Colors.grey)),
+                                        style: const TextStyle(fontSize: 17, color: Colors.grey)),
                                     Text('${modelFavorite.calorie} ККал',
-                                        style: const TextStyle(
-                                            fontSize: 17, color: Colors.grey)),
+                                        style: const TextStyle(fontSize: 17, color: Colors.grey)),
                                   ],
                                 ),
                               ),
@@ -343,41 +330,44 @@ class _SecondCategoriesState extends State<SecondCategories> {
                                 padding: const EdgeInsets.all(20),
                                 child: modelFavorite.ingredient != 'Майонез'
                                     ? Column(
-                                  children: [
-                                    if (modelFavorite.addIngredients != null)
-                                      for(int i = 0; i<modelFavorite.addIngredients!.length; i++)
-                                        Column(
-                                          children: [
-                                            itemShowDialogWidget('${modelFavorite.addIngredients?[i].igdName}', modelFavorite.addIngredients![i].igdPrice ?? 0, addAndRemoveWidget(), Colors.red),
-                                            if (i != modelFavorite.addIngredients!.length - 1)
-                                              const SizedBox(height: 10,),
-                                          ],
-                                        ),
-                                  ],
-                                )
+                                        children: [
+                                          if (modelFavorite.addIngredients != null)
+                                            for (int i = 0; i < modelFavorite.addIngredients!.length; i++)
+                                              Column(
+                                                children: [
+                                                  itemShowDialogWidget('${modelFavorite.addIngredients?[i].igdName}', modelFavorite.addIngredients![i].igdPrice ?? 0, addAndRemoveWidget(), Colors.red),
+                                                  if (i != modelFavorite.addIngredients!.length - 1)
+                                                    const SizedBox(
+                                                      height: 10,
+                                                    ),
+                                                ],
+                                              ),
+                                        ],
+                                      )
                                     : Row(
-                                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                                  children: [
-                                    Row(
-                                      children: [
-                                        const CircleAvatar(
-                                          radius: 15,
-                                          backgroundColor: Colors.orange,
-                                        ),
-                                        const SizedBox(
-                                          width: 10,
-                                        ),
-                                        Text('${modelFavorite.ingredient}'),
-                                      ],
-                                    ),
-                                    Material(
-                                      child: Checkbox(value: isChecked, onChanged: (bool? value) {
-                                          isChecked = value!;
-                                          setState(() {});
-                                      }),
-                                    )
-                                  ],
-                                ),
+                                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                        children: [
+                                          Row(
+                                            children: [
+                                              const CircleAvatar(
+                                                radius: 15,
+                                                backgroundColor: Colors.orange,
+                                              ),
+                                              const SizedBox(width: 10),
+                                              Text('${modelFavorite.ingredient}'),
+                                            ],
+                                          ),
+                                          Material(
+                                            child: Checkbox(
+                                                value: isChecked,
+                                                onChanged: (bool? value) {
+                                                  setState(() {
+                                                    isChecked = value ?? false;
+                                                  });
+                                                }),
+                                          )
+                                        ],
+                                      ),
                               ),
                               const Divider(),
                               Padding(
@@ -390,8 +380,8 @@ class _SecondCategoriesState extends State<SecondCategories> {
                                       crossAxisAlignment: CrossAxisAlignment.start,
                                       children: [
                                         const Text('Итого'),
-                                        Text('${modelFavorite.price} ₽', style:
-                                        const TextStyle(fontSize: 20, fontWeight: FontWeight.w500))
+                                        Text('${modelFavorite.price} ₽',
+                                            style: const TextStyle(fontSize: 20, fontWeight: FontWeight.w500))
                                       ],
                                     ),
                                   ],
@@ -404,10 +394,13 @@ class _SecondCategoriesState extends State<SecondCategories> {
                                       shape: RoundedRectangleBorder(
                                         borderRadius: BorderRadius.circular(2),
                                       ),
-                                      minimumSize: const Size(250, 45)
-                                  ),
+                                      minimumSize: const Size(250, 45)),
                                   onPressed: () {},
-                                  child: const Text('УБРАТЬ ИЗ КОРЗИНЫ', style: TextStyle(color: Colors.white),))
+                                  child: const Text(
+                                    'УБРАТЬ ИЗ КОРЗИНЫ',
+                                    style: TextStyle(color: Colors.white),
+                                  ),
+                              ),
                             ],
                           ),
                         ),
@@ -418,7 +411,9 @@ class _SecondCategoriesState extends State<SecondCategories> {
                 Align(
                   alignment: Alignment.topCenter,
                   child: SizedBox(
-                      width: 200, height: 150, child: Image.asset(modelFavorite.image)),
+                      width: 200,
+                      height: 150,
+                      child: Image.asset(modelFavorite.image)),
                 ),
               ],
             ),
@@ -442,11 +437,7 @@ class _SecondCategoriesState extends State<SecondCategories> {
           ),
         ),
         const SizedBox(width: 10),
-        const Text(
-          '1',
-          style: TextStyle(
-              fontSize: 20,
-              fontWeight: FontWeight.w500),
+        const Text('1', style: TextStyle(fontSize: 20, fontWeight: FontWeight.w500),
         ),
         const SizedBox(width: 10),
         SizedBox(
@@ -463,7 +454,8 @@ class _SecondCategoriesState extends State<SecondCategories> {
     );
   }
 
-  Widget itemShowDialogWidget(String title, int price, Widget addAndRemove, Color color) {
+  Widget itemShowDialogWidget(
+      String title, int price, Widget addAndRemove, Color color) {
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [

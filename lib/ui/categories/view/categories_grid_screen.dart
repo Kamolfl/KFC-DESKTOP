@@ -12,16 +12,16 @@ class CategoriesGridScreen extends StatelessWidget {
     return Expanded(
       child: GridView.builder(
         itemCount: categories.length,
-        gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+        gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
           crossAxisCount: 2,
           crossAxisSpacing: 10,
           mainAxisSpacing: 10,
-          mainAxisExtent: MediaQuery.of(context).size.height * 0.1,
+          mainAxisExtent: 200,
         ),
         itemBuilder: (BuildContext context, int index) {
           return InkWell(
             onTap: () {
-              Navigator.of(context).pushReplacement(MaterialPageRoute(builder: (context) => SecondCategories()));
+              Navigator.of(context).pushReplacement(MaterialPageRoute(builder: (context) => const SecondCategories()));
             },
             child: Stack(
               children: [
@@ -62,8 +62,8 @@ class CategoriesGridScreen extends StatelessWidget {
                   right: 0,
                   bottom: 0,
                   child: Container(
-                    width: 200,
-                    height: 150,
+                    width: 170,
+                    height: 120,
                     color: Colors.red,
                   ),
                 ),
