@@ -11,13 +11,13 @@ void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   if (!kIsWeb && Platform.isWindows) WindowsVideoPlayer.registerWith();
   await windowManager.ensureInitialized();
-  WindowOptions windowOptions = const WindowOptions(
+  // WindowOptions windowOptions = const WindowOptions(
     // size: Size(1080, 660),
     // center: true,
     // backgroundColor: Colors.transparent,
     // skipTaskbar: true,
     // titleBarStyle: TitleBarStyle.hidden,
-  );
+  // );
   // windowManager.waitUntilReadyToShow(windowOptions, () async {
   //   await windowManager.show();
   //   await windowManager.focus();

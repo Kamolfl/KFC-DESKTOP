@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:add_to_cart_animation/add_to_cart_animation.dart';
 import 'package:kfc_desktop/models/second_categories_model.dart';
-import 'package:kfc_desktop/ui/second_categories/second_categories_listview.dart';
 
 class SecondCategories extends StatefulWidget {
   const SecondCategories({super.key});
@@ -118,13 +117,13 @@ class _SecondCategoriesState extends State<SecondCategories> {
                               crossAxisCount: 3,
                               crossAxisSpacing: 10,
                               mainAxisSpacing: 10,
-                              mainAxisExtent: MediaQuery.of(context).size.height * 0.6,
+                              mainAxisExtent: MediaQuery.of(context).size.height * 0.2,
                             ),
                             itemBuilder: (BuildContext context, int index) {
                               GlobalKey widgetKey = GlobalKey();
                               return Container(
-                                color: Colors.grey[100],
-                                // color: Colors.white,
+                                // color: Colors.grey[100],
+                                color: Colors.green,
                                 child: InkWell(
                                   onTap: () async {
                                     showDialogWidget(context, model[selectedIndex], index);
@@ -188,7 +187,8 @@ class _SecondCategoriesState extends State<SecondCategories> {
                                                         style: const TextStyle(
                                                             fontSize: 30,
                                                             fontWeight: FontWeight.w900),
-                                                      )),
+                                                      ),
+                                                  ),
                                                 ],
                                               ),
                                             ),
@@ -240,7 +240,7 @@ class _SecondCategoriesState extends State<SecondCategories> {
                               active: false,
                               backgroundColor: Colors.red,
                             ),
-                            icon: const Icon(Icons.shopping_cart_outlined, color: Colors.white, size: 30,)),
+                            icon: const Icon(Icons.shopping_cart_outlined, color: Colors.white, size: 30)),
                       ),
                       const Expanded(
                         child: Center(

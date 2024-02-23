@@ -30,89 +30,85 @@ class SecondCategoriesGridview extends StatelessWidget {
                   crossAxisCount: 3,
                   crossAxisSpacing: 10,
                   mainAxisSpacing: 10,
-                  mainAxisExtent: MediaQuery.of(context).size.height * 0.6,
+                  mainAxisExtent: MediaQuery.of(context).size.height * 0.3,
                 ),
                 itemBuilder: (BuildContext context, int index) {
-                  return Container(
-                    color: Colors.grey[100],
-                    // color: Colors.white,
-                    child: InkWell(
-                      onTap: () {
-                        showDialogWidget(context, secondCategoriesModel[index], index);
-                      },
-                      child: Stack(
-                        children: [
-                          Center(
-                            child: UnconstrainedBox(
-                              child: Container(
-                                width: 250,
-                                height: 310,
-                                decoration: BoxDecoration(
-                                  borderRadius: BorderRadius.circular(10),
-                                  color: Colors.white,
-                                ),
-                                child: Padding(
-                                  padding: const EdgeInsets.all(20),
-                                  child: Column(
-                                    mainAxisAlignment:
-                                    MainAxisAlignment.spaceBetween,
-                                    crossAxisAlignment:
-                                    CrossAxisAlignment.start,
-                                    children: [
-                                      const SizedBox(height: 120),
-                                      FittedBox(
-                                          child: Text(
-                                            secondCategoriesModel[selectedIndex].text,
-                                            style: const TextStyle(
-                                                fontSize: 30,
-                                                fontWeight: FontWeight.w900),
-                                          )),
-                                      Row(
-                                        mainAxisAlignment:
-                                        MainAxisAlignment.spaceBetween,
-                                        children: [
-                                          Text(
-                                            '${secondCategoriesModel[index].foodVariants[index].gram} гр',
-                                            style: TextStyle(
-                                              color:
-                                              Colors.grey.withOpacity(0.6),
-                                              fontSize: 15,
-                                              fontWeight: FontWeight.bold,
-                                            ),
+                  return InkWell(
+                    onTap: () {
+                      showDialogWidget(context, secondCategoriesModel[index], index);
+                    },
+                    child: Stack(
+                      children: [
+                        Center(
+                          child: UnconstrainedBox(
+                            child: Container(
+                              width: 250,
+                              height: 310,
+                              decoration: BoxDecoration(
+                                borderRadius: BorderRadius.circular(10),
+                                color: Colors.white,
+                              ),
+                              child: Padding(
+                                padding: const EdgeInsets.all(20),
+                                child: Column(
+                                  mainAxisAlignment:
+                                  MainAxisAlignment.spaceBetween,
+                                  crossAxisAlignment:
+                                  CrossAxisAlignment.start,
+                                  children: [
+                                    const SizedBox(height: 120),
+                                    FittedBox(
+                                        child: Text(
+                                          secondCategoriesModel[selectedIndex].text,
+                                          style: const TextStyle(
+                                              fontSize: 30,
+                                              fontWeight: FontWeight.w900),
+                                        )),
+                                    Row(
+                                      mainAxisAlignment:
+                                      MainAxisAlignment.spaceBetween,
+                                      children: [
+                                        Text(
+                                          '${secondCategoriesModel[index].foodVariants[index].gram} гр',
+                                          style: TextStyle(
+                                            color:
+                                            Colors.grey.withOpacity(0.6),
+                                            fontSize: 15,
+                                            fontWeight: FontWeight.bold,
                                           ),
-                                          Text(
-                                            '${secondCategoriesModel[index].foodVariants[index].calorie} ККал',
-                                            style: TextStyle(
-                                              color:
-                                              Colors.grey.withOpacity(0.6),
-                                              fontSize: 15,
-                                              fontWeight: FontWeight.bold,
-                                            ),
+                                        ),
+                                        Text(
+                                          '${secondCategoriesModel[index].foodVariants[index].calorie} ККал',
+                                          style: TextStyle(
+                                            color:
+                                            Colors.grey.withOpacity(0.6),
+                                            fontSize: 15,
+                                            fontWeight: FontWeight.bold,
                                           ),
-                                        ],
-                                      ),
-                                      FittedBox(
-                                          child: Text(
-                                            '${secondCategoriesModel[index].foodVariants[index].price} ₽',
-                                            style: const TextStyle(
-                                                fontSize: 30,
-                                                fontWeight: FontWeight.w900),
-                                          )),
-                                    ],
-                                  ),
+                                        ),
+                                      ],
+                                    ),
+                                    FittedBox(
+                                        child: Text(
+                                          '${secondCategoriesModel[index].foodVariants[index].price} ₽',
+                                          style: const TextStyle(
+                                              fontSize: 30,
+                                              fontWeight: FontWeight.w900),
+                                        )),
+                                  ],
                                 ),
                               ),
                             ),
                           ),
-                          Align(
-                            alignment: Alignment.topCenter,
-                            child: SizedBox(
-                                width: 200,
-                                height: 150,
-                                child: Image.asset(secondCategoriesModel[selectedIndex].image)),
-                          ),
-                        ],
-                      ),
+                        ),
+                        Align(
+                          alignment: Alignment.topCenter,
+                          child: SizedBox(
+                              width: 200,
+                              height: 150,
+                              child: Image.asset(secondCategoriesModel[selectedIndex].image)),
+                        ),
+                      ],
                     ),
                   );
                 },
