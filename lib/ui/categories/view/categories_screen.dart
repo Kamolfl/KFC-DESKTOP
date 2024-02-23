@@ -31,7 +31,7 @@ class CategoriesScreen extends StatelessWidget {
             ),
             Container(
               width: double.infinity,
-              height: MediaQuery.of(context).size.height * 0.7,
+              height: MediaQuery.of(context).size.height * 0.07,
               color: Colors.black,
               child: Padding(
                 padding: const EdgeInsets.all(20),
