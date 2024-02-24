@@ -17,8 +17,7 @@ class CategoriesScreen extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            const Text('КАТЕГОРИИ',
-                style: TextStyle(fontSize: 50, fontWeight: FontWeight.w700)),
+            const Text('КАТЕГОРИИ', style: TextStyle(fontSize: 50, fontWeight: FontWeight.w700)),
             Expanded(
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,

@@ -1,20 +1,11 @@
-class FoodVariant {
-  final String image;
-  final String name;
-  final int gram;
-  final int calorie;
-  final int price;
-  final String? ingredient;
-  final List<AddIngredients>? addIngredients;
 
-  FoodVariant({this.ingredient, this.addIngredients, required this.image, required this.name, required this.gram, required this.calorie, required this.price});
-}
+import 'food_variant.dart';
 
-class AddIngredients {
-  final String? igdName;
-  final int? igdPrice;
+class Ingredient {
+  final String? name;
+  final int? price;
 
-  AddIngredients({this.igdName, this.igdPrice});
+  Ingredient({this.name, this.price});
 }
 
 class SecondCategoriesModel {
@@ -39,7 +30,7 @@ List<SecondCategoriesModel> model = [
     text: 'ПИЦЦА',
     image: 'assets/images/pizza.png',
     foodVariants: [
-      FoodVariant(image: 'assets/images/pizza1.png', name: 'Пепперони', gram: 350, calorie: 600, price: 280, ingredient: 'Майонез'),
+      FoodVariant(image: 'assets/images/pizza1.png', name: 'Пепперони', gram: 350, calorie: 600, price: 280, extraIngredient: 'Майонез'),
       FoodVariant(image: 'assets/images/pizza2.png', name: 'Маргарита', gram: 351, calorie: 601, price: 281),
     ],
   ),
@@ -90,35 +81,35 @@ List<SecondCategoriesModel> model = [
     image: 'assets/images/deserts.png',
     foodVariants: [
       FoodVariant(image: 'assets/images/desert1.png', name: 'Шоколадный торт', gram: 250, calorie: 400, price: 180,
-        addIngredients: [
-          AddIngredients(igdName: 'Бекон', igdPrice: 10),
-          AddIngredients(igdName: 'Сыр', igdPrice: 15),
-          AddIngredients(igdName: 'Халапеньо', igdPrice: 12),
+        ingredients: [
+          Ingredient(name: 'Бекон', price: 10),
+          Ingredient(name: 'Сыр', price: 15),
+          Ingredient(name: 'Халапеньо', price: 12),
         ],
       ),
       FoodVariant(image: 'assets/images/desert2.png', name: 'fewqkhfy торт', gram: 251, calorie: 401, price: 181,
-        addIngredients: [
-          AddIngredients(igdName: 'Соус', igdPrice: 8),
-          AddIngredients(igdName: 'Кетчуп', igdPrice: 5),
-          AddIngredients(igdName: 'Файонез', igdPrice: 7),
+        ingredients: [
+          Ingredient(name: 'Соус', price: 8),
+          Ingredient(name: 'Кетчуп', price: 5),
+          Ingredient(name: 'Файонез', price: 7),
         ],
       ),
       FoodVariant(image: 'assets/images/desert3.png', name: 'ЦКПЦДКАЭДШН', gram: 252, calorie: 402, price: 182,
-        addIngredients: [
-          AddIngredients(igdName: 'Моус', igdPrice: 1),
-          AddIngredients(igdName: 'Сетчуп', igdPrice: 2),
-          AddIngredients(igdName: 'Пайонез', igdPrice: 3),
+        ingredients: [
+          Ingredient(name: 'Моус', price: 1),
+          Ingredient(name: 'Сетчуп', price: 2),
+          Ingredient(name: 'Пайонез', price: 3),
         ],
       ),
-      FoodVariant(image: 'assets/images/desert4.png', name: 'УЦАДЛГ', gram: 253, calorie: 403, price: 183, ingredient: 'Майонез'),
+      FoodVariant(image: 'assets/images/desert4.png', name: 'УЦАДЛГ', gram: 253, calorie: 403, price: 183, extraIngredient: 'Майонез'),
       FoodVariant(image: 'assets/images/desert5.png', name: 'WLUQYTUTIUTIWEF', gram: 254, calorie: 404, price: 184,
-        addIngredients: [
-          AddIngredients(igdName: 'Бекон', igdPrice: 10),
-          AddIngredients(igdName: 'Сыр', igdPrice: 15),
-          AddIngredients(igdName: 'Халапеньо', igdPrice: 12),
+        ingredients: [
+          Ingredient(name: 'Бекон', price: 10),
+          Ingredient(name: 'Сыр', price: 15),
+          Ingredient(name: 'Халапеньо', price: 12),
         ],
       ),
-      FoodVariant(image: 'assets/images/desert6.png', name: 'wkfgkkwefk', gram: 255, calorie: 405, price: 185, ingredient: 'Майонез'),
+      FoodVariant(image: 'assets/images/desert6.png', name: 'wkfgkkwefk', gram: 255, calorie: 405, price: 185, extraIngredient: 'Майонез'),
       FoodVariant(image: 'assets/images/desert7.png', name: 'fwlkuЛГпуца', gram: 256, calorie: 406, price: 186),
     ],
   ),
